@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const instance = mongoose.Schema({
   email: {
@@ -30,6 +30,9 @@ const instance = mongoose.Schema({
     required: true,
     default: Date.now,
   },
+  refreshToken: {
+    types: String,
+  },
 });
 
-module.exports = mongoose.model("users", instance);
+module.exports = mongoose.model('users', instance);

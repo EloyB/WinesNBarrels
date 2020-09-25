@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const instance = new mongoose.Schema({
   name: {
@@ -21,8 +21,19 @@ const instance = new mongoose.Schema({
     type: String,
     required: true,
   },
-  image: { data: Buffer, contentType: String },
+  type: {
+    type: String,
+    required: true,
+  },
+  image: {
+    data: Buffer,
+    contentType: String,
+  },
   grape: {
+    grapeId: {
+      type: Number,
+      required: true,
+    },
     name: {
       type: String,
     },
@@ -31,6 +42,10 @@ const instance = new mongoose.Schema({
     },
   },
   vineyard: {
+    vineyardId: {
+      type: Number,
+      required: true,
+    },
     name: {
       type: String,
     },
@@ -39,8 +54,19 @@ const instance = new mongoose.Schema({
     },
   },
   foods: {
-    type: [{}],
+    type: [
+      {
+        image: {
+          data: Buffer,
+          contentType: String,
+        },
+        name: {
+          type: String,
+          required: true,
+        },
+      },
+    ],
   },
 });
 
-module.exports = mongoose.model("wines", instance);
+module.exports = mongoose.model('wines', instance);

@@ -5,10 +5,13 @@ const instance = new mongoose.Schema({
     type: String,
     required: true,
   },
+  image: {
+    data: Buffer,
+    contentType: String,
+  },
   description: {
     type: String,
-    required: true,
   },
 });
 
-module.exports = mongoose.model('grapes', instance);
+module.exports = mongoose.model('foods', instance);

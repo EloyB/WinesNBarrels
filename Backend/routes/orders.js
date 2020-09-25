@@ -1,14 +1,19 @@
-const router = require("express").Router();
-const Order = require("../models/Order");
-const verify = require("./verifyToken");
+const router = require('express').Router();
+const Order = require('../models/Order');
+const verify = require('./verifyToken');
 
-router.get("/", verify, (req, res) => {
-  res.json({
-    orders: { title: "order 1", description: "some order from the user" },
-  });
+router.get('/', async (req, res) => {
+  // const orders = await Order.find({});
+  // console.log('orders:', orders);
+  // if (orders.length == 0) {
+  //   res.status(200).send('No orders found.');
+  // } else {
+  //   res.status(200).json(orders);
+  // }
 });
 
-router.post("/create", async (req, res) => {
+//TODO: Stripe payment logic
+router.post('/create', async (req, res) => {
   const order = new Order({
     userId: req.body.userId,
     items: req.body.items,

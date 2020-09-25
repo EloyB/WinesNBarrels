@@ -1,5 +1,4 @@
-const mongoose = require("mongoose");
-const Wine = require("./Wine");
+const mongoose = require('mongoose');
 
 const instance = new mongoose.Schema({
   userId: {
@@ -25,6 +24,11 @@ const instance = new mongoose.Schema({
     ],
     required: true,
   },
+  orderDate: {
+    type: Date,
+    required: true,
+    default: Date.now(),
+  },
 });
 
-module.exports = mongoose.model("orders", instance);
+module.exports = mongoose.model('orders', instance);
