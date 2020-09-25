@@ -17,8 +17,11 @@ const instance = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  taste: {
+    type: String,
+    required: true,
+  },
   image: { data: Buffer, contentType: String },
-
   grape: {
     name: {
       type: String,
@@ -34,6 +37,9 @@ const instance = new mongoose.Schema({
     description: {
       type: String,
     },
+  },
+  foods: {
+    type: [{}],
   },
 });
 
