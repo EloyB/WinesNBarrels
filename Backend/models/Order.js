@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const instance = new mongoose.Schema({
   userId: {
@@ -29,6 +29,10 @@ const instance = new mongoose.Schema({
     required: true,
     default: Date.now(),
   },
+  total: {
+    type: Number,
+    required: true,
+  },
 });
 
-module.exports = mongoose.model('orders', instance);
+module.exports = mongoose.model("orders", instance);
